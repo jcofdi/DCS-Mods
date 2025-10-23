@@ -20,6 +20,9 @@ float2 uScale;
 
 static const float flirIntensity = 0.42;
 
+// >>> Added: single knob to resize the moon (affects all passes)
+static const float MoonSizeMultiplier = 2.5;
+
 struct vsInput{
 	float3 vPosition:	POSITION0;
 	float2 vTexCoord0:	TEXCOORD0;
@@ -33,9 +36,10 @@ struct vsOutput{
 
 vsOutput vsMoon(in const vsInput i){
 	vsOutput o;
-	float4 position = float4(i.vPosition*uScale.x, 1.0);
+	// Apply MoonSizeMultiplier to the existing uScale.x
+	float4 position = float4(i.vPosition * (uScale.x * MoonSizeMultiplier), 1.0);
 	o.vPosition = mul(position, matWorldViewProj);
-	o.vPosition.z=0;
+	o.vPosition.z = 0;
 	o.uv = i.vTexCoord0;
 	o.vWorldPos = mul(position, matWorld);
 
@@ -132,7 +136,7 @@ BlendState moonBS
 	SrcBlend = ONE;
 	DestBlend = INV_SRC_ALPHA;
 	BlendOp = ADD;
-	SrcBlendAlpha = ZERO;
+	SrcBlendAlpha = SRC_ALPHA;
 	DestBlendAlpha = INV_SRC_ALPHA;
 	BlendOpAlpha = ADD;
 	RenderTargetWriteMask[0] = 0x0f; //RED | GREEN | BLUE | ALPHA
