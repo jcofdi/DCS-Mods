@@ -13,7 +13,7 @@ float	rootBranchLen;
 float	zoom;
 
 static const float opacityMax = 0.12;
-static const float distMax = 10;
+static const float distMax = 99999;
 
 static const float halfWidth = 6.f/2;
 
@@ -83,10 +83,10 @@ HS_PATCH_OUTPUT HSconst(InputPatch<VS_OUTPUT, 2> ip)
     HS_PATCH_OUTPUT o;
 
 	// const float maxSegments = 16;
-	const float maxSegments = 32;
+	const float maxSegments = 20; // 32 Number of segments per lightning.
 
-	float dist = distance(ip[0].params1.xyz, ip[1].params1.xyz);//длина отрезка
-	//rootBranchLen - длина базовой ветки
+	float dist = distance(ip[0].params1.xyz, ip[1].params1.xyz) *2;//segment length *2
+	//rootBranchLen - baseline length
 
     o.edges[0] = 1; 
 	o.edges[1] = 1 + floor((maxSegments-1)*min(1,sqrt(dist/rootBranchLen))+0.5);
@@ -118,7 +118,7 @@ VS_OUTPUT DS_spline(HS_PATCH_OUTPUT input, OutputPatch<VS_OUTPUT, 2> op, float2 
     VS_OUTPUT o;
 
 	//const float offsetCoef = 0.08;//кривизна отрезка
-	const float offsetCoef = 0.1;//кривизна отрезка
+	const float offsetCoef = 0.04;//curvature of a segment 0.1 Higher value makes the lightning arc more.
 	const float tCoef = pId*0.05;
 
     const float t = uv.x;
@@ -140,11 +140,11 @@ VS_OUTPUT DS_spline(HS_PATCH_OUTPUT input, OutputPatch<VS_OUTPUT, 2> op, float2 
 	// float3 offset = float3(snoise(float2(t2,0)), snoise(float2(t2+3.1321*tCoef,64.123)), snoise(float2(t2+14.321*tCoef,23.6413)))*2 - 1;
 
 	//float3 offset = float3(noise2D(float2(t2,pos.y)), noise2D(float2(t2+3.1321, pos.y)), noise2D(float2(t2+14.321,pos.y)))*2 - 1;
-	float dist = distance(op[0].params1.xyz, op[1].params1.xyz);//длина отрезка, который надо разбить
+	float dist = distance(op[0].params1.xyz, op[1].params1.xyz);//the length of the segment to be split
 		
-	pos += offset*cos((t*2-1)*halfPI)*dist*offsetCoef; //рандомное смещение 
+	pos += offset*cos((t*2-1)*halfPI)*dist*offsetCoef; //random offset 
 
-	//o.params2 = lerp(op[0].params1.w, op[1].params1.w, t); //время рождения
+	//o.params2 = lerp(op[0].params1.w, op[1].params1.w, t); //time of birth
 	//o.params1 = mul(float4(pos,1), View);
 	//o.params1 = float4(mul(float4(pos,1), VP), lerp(op[0].params1.w, op[1].params1.w, t));	
 	//o.params1 = float4(mul(float4(pos,1), View).xyz, lerp(op[0].params1.w, op[1].params1.w, t));
@@ -198,9 +198,9 @@ void GS_spline(line VS_OUTPUT input[2], inout LineStream<PS_INPUT> outputStream)
 void addEdge(inout PS_INPUT o[2], in float3 pos1, in float2 offset, in float2 offsetDir, inout TriangleStream<PS_INPUT> outputStream, in float age, in float v)
 {	
 	const float texTile = 0.05;
-	const float deepSpeed = 1; //скорость приращения глубины
-	const float offsetCoef1 = 1;// + pow(age1, 0.5)*2.5; // увеличение толщины шлейфа
-	const float offsetCoef2 = 1;// + pow(age2, 0.5)*2.5; // увеличение толщины шлейфа
+	const float deepSpeed = 1; //depth increment rate
+	const float offsetCoef1 = 1;// + pow(age1, 0.5)*2.5; // increase in the thickness of the loop
+	const float offsetCoef2 = 1;// + pow(age2, 0.5)*2.5; // increase in the thickness of the loop
 	
 	offset *= 1-pow(age,2);
 	//offset *=2;
@@ -281,7 +281,7 @@ float4  PS_geom(PS_INPUT i) : SV_TARGET0
 	clr.a *= step(i.params.z, time);
 	clr.rgb *= clr.rgb;
 
-	return max(0, clr);
+	return max(20, 10);
 }
 
 #define lightningAlphaBlend additiveAlphaBlend
