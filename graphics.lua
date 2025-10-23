@@ -72,6 +72,7 @@ VFSTexturePaths =
     "./Bazar/World/textures/MI26_textures",   
     "./Bazar/World/textures/UH_60_textures",
     "./Bazar/World/textures/T_Textures",
+    --"./Bazar/World/textures/Ka-50_general", -- moved to CoreMods
     "./Bazar/World/textures/yak-40_tex",
     "./Bazar/World/textures/NAVY_Textures",
     "./Bazar/World/textures/Su-25_common_textures",
@@ -152,6 +153,9 @@ VFSTexturePaths =
 	"./Bazar/World/textures/ural-375",
 	"./Bazar/World/textures/ural-apa",
 	"./Bazar/World/textures/ural_4320_t",
+	"./Bazar/World/textures/ural_4230_civil",
+	"./Bazar/World/textures/ural_atz5_civil",	
+     --"./Bazar/World/animations/textures",
 	"./Bazar/World/textures/container_30ft",
 	"./Bazar/World/textures/konteiner_red", 
 	"./Bazar/World/textures/pilot_textures",
@@ -272,6 +276,46 @@ Camera =
         lights = {200, 80000};
         districtobjects = {300, 300};
         districts = {12000, 12000};
+
+        lodMult = 1.0;
+        lodAdd = 0;
+    };
+	Ultimate =
+    {
+        near_clip = 0.02;
+        far_clip = 300000;
+
+        --structures = {150000, 150000};
+        --dynamic = {150000, 150000};
+        dynamic2 = {150000, 150000,150000};
+        objects = {150000, 150000};
+        mirage = {150000, 150000};
+        surface = {150000, 150000};
+        lights = {150000, 150000};
+        districtobjects = {150000, 150000};
+        districts = {150000, 150000};
+		effects = {200000, 200000};
+		
+
+        lodMult = 1.0;
+        lodAdd = 0;
+    };
+    Insane =
+    {
+        near_clip = 0.02;
+        far_clip = 300000;
+
+        --structures = {150000, 150000};
+        --dynamic = {150000, 150000};
+        dynamic2 = {150000, 150000,150000};
+        objects = {150000, 150000};
+        mirage = {150000, 150000};
+        surface = {150000, 150000};
+        lights = {150000, 150000};
+        districtobjects = {150000, 150000};
+        districts = {150000, 150000};
+		effects = {200000, 200000};
+		
 
         lodMult = 1.0;
         lodAdd = 0;
@@ -400,6 +444,8 @@ Terrain =
 		High = 1.0;
 		Ultra = 1.2;
 		Extreme = 1.5;
+		Ultimate = 2.5;
+		Insane = 4.0;
 	};
 	
 	civTraffic = {		
@@ -427,7 +473,7 @@ ambientMap = false;
 ]]--
 
 DebugColoredTexture = 0;
-ScreenshotQuality = 90;
+ScreenshotQuality = 100;
 ScreenshotExt = "png";
 FogParam1 = 6;
 FogParam2 = 1.1;
