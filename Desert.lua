@@ -3,7 +3,7 @@ surface =
 	['landShadowsSharpness'] = 0.2;
 	['diffuseGain'] = 1.2;
 	['landAOminimal'] = 0.43;
-	['gamma'] = 1;
+	['gamma'] = 1.3;
 	['surfaceColorBias'] = 
 	{
 		['1'] = 0;
