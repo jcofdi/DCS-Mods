@@ -32,14 +32,14 @@ local Button 				= require('Button')
 local Static            	= require('Static')
 local EditBox 				= require('EditBox')
 local SpinBox				= require('SpinBox')
-local Slider 				= require('HorzSlider')
+local Slider 				= require('HorzSlider')									  
 local DCS    				= require('DCS')
 local magvar 				= require('magvar')
 local UC					= require('utils_common')
 local OptionsData			= require('Options.Data')
 local Skin              	= require('Skin')
-local terrainDATA			= require('me_terrainDATA')
-local UpdateManager			= require('UpdateManager')
+local terrainDATA			= require('me_terrainDATA')											   
+local UpdateManager			= require('UpdateManager')												
 
 i18n.setup(_M)
 
@@ -53,7 +53,7 @@ local presetsClouds = {}
 local presetsHalo = {}
 local sunDeploy = false
 local AtmRandParam = {}
-local fogManualWidgets = {}
+local fogManualWidgets = {}						   
 
 local seasons = {
     _('SUMMER'), 
@@ -155,17 +155,17 @@ local cdata =
 	sunset = _('Sunset'),
 	sunrise = _('Sunrise'),
 	
-	cyclones 		= _('Cyclones'),
+	cyclones = _('Cyclones'),
 	pressure_spread = _('Pressure spread'),
-	ellipticity 	= _('Ellipticity'),
+	ellipticity = _('Ellipticity'),
 	pressure_excess = _('Pressure excess'),
-	rotation 		= _('Rotation'),
-	minusH 			= "-1 ".._("h"),
-	plusH 			= "+1 ".._("h"),
-	Appearance 		= _("APPEARANCE"),
-	halo 			= _("ICE HALO"),
-	
-	TIME 			= _("TIME, h:m"),
+	rotation = _('Rotation'),
+	minusH = "-1 ".._("h"),
+	plusH = "+1 ".._("h"),
+	Appearance = _("APPEARANCE"),
+	halo = _("ICE HALO"),
+
+ 	TIME 			= _("TIME, h:m"),
 	VISIBILITY 		= _("VISIBILITY"),
 	THICKNESS 		= _("THICKNESS"),
 	AddFog			= _("Add fog key"),
@@ -178,7 +178,7 @@ local cdata =
 	cannotDust		= _("Сannot be enabled with fog"),
 	cannotFog		= _("Сannot be enabled with dust"),
 	Attached		= _("Synced to mission start time"),
-	AttachedTooltip	= _("If enabled, the relative time of each fog key remains the same, but the absolute time shifts with the mission start time"),
+	AttachedTooltip	= _("If enabled, the relative time of each fog key remains the same, but the absolute time shifts with the mission start time"),					  
 }
 
 -- Переменные загружаемые/сохраняемые данные (путь к файлу - defaultPresetsPath)
@@ -189,9 +189,9 @@ vdata =
 	halo = {preset = 'off', crystalsPreset = nil},
     wind = {atGround = {speed = 0, dir = 0}, at2000 = {speed = 0, dir = 0}, at8000 = {speed = 0, dir = 0}},
     groundTurbulence = 0,
-    visibility = {distance = 80000},
+    visibility = {distance = 500000},
 
-	enable_dust = false,
+   	enable_dust = false,
     fog2 = {mode = 1},
 	dust_density = 0,
     qnh = 760,
@@ -207,7 +207,7 @@ local pcItemsById = {}
 local selectedPresetHalo = nil
 local phItemsById = {}
 local tblCyc = {}
-local fogSliderValues = {}
+local fogSliderValues = {}						  
 
 defaultCyclone = 
 {
@@ -226,7 +226,7 @@ local windowWidth = 0
 local windowHeight = 0
 
 function controlDir(a_value)
-	return a_value
+   return a_value
 end
 
 -------------------------------------------------------------------------------
@@ -247,25 +247,25 @@ local precptns = {
 
     {
         name = _('RAIN'),
-        minDensity = 5,
+        minDensity = 1,
         minTemp = 0,
     },
 
     {
         name = _('THUNDERSTORM'),
-        minDensity = 9,
+        minDensity = 1,
         minTemp = 0,
     },
 
     {
         name = _('SNOW'), 
-        minDensity = 5,
+        minDensity = 1,
         maxTemp = 0,
     },
     
     {
         name = _('SNOWSTORM'), 
-        minDensity = 9,
+        minDensity = 1,
         maxTemp = 0,
     },
 }
@@ -401,7 +401,7 @@ function loadPresets(dir, a_default)
                 end
                 
                 fixTurbulence(preset)  
-				fixFog(preset, true) 
+				fixFog(preset, true)		 
 
 				if data.dtime then
 					if data.dtime.date then
@@ -502,14 +502,14 @@ function loadPreset(displayName)
 		end
 
 		vdata.enable_fog = nil
-		vdata.fog = nil
+		vdata.fog = nil				
 		vdata.halo = nil
 		U.copyTable(vdata, preset)
         vdata.fileName = nil
 		vdata.start_time = nil
-		vdata.date = nil		
-    end
-    c_presets:setText(displayName)
+		vdata.date = nil
+		end
+     c_presets:setText(displayName)
     
     if (vdata.atmosphere_type == regimenDynamic) then         
         createCycloneVdata()
@@ -855,8 +855,8 @@ function setCurPresetClouds(a_preset, a_bSetDefault)
 	vdata.clouds.preset = a_preset
 	
 	if vdata.clouds.preset == nil then
-		sl_base:setRange(300, 5000)
-		e_baseUnitSpinBox:setRange(300, 5000)
+		sl_base:setRange(0, 30000)
+		e_baseUnitSpinBox:setRange(0, 30000)
 		sl_base:setEnabled(true)
 		e_baseUnitSpinBox:setEnabled(true)
 		sl_base:setValue(vdata.clouds.base)
@@ -924,9 +924,9 @@ function resize()
 	clouds.p_qnh:setPosition(0, 255+offset)
 	clouds:setSize(410, 282+offset)
 	pHalo:setBounds(0, 344+offset, 410, sizeHaloH)
-	wind:setPosition(0, 344+offset+sizeHaloH)  
-	turbulence:setPosition(0, 593+offset+sizeHaloH)      
-	pFog:setPosition(0, 645+offset+sizeHaloH) 
+	wind:setPosition(0,344+offset+sizeHaloH)  
+	turbulence:setPosition(0,593+offset+sizeHaloH)      
+	pFog:setPosition(0,645+offset+sizeHaloH) 
 	
 	if vdata.fog2.mode == 4 then
 		local fogW, fogH = pFogParams:getSize()
@@ -938,10 +938,10 @@ function resize()
 		pFog:setSize(410, 60)
 		pDust:setPosition(0, 705+offset+sizeHaloH) 
 		box.pPresets:setPosition(0, 792+offset+sizeHaloH)  
-	end
-	
+	end	
 
-	box:updateWidgetsBounds()
+	
+    box:updateWidgetsBounds()
 end
 
 local function createWindPanel()
@@ -994,11 +994,10 @@ local function createWindPanel()
         e_wind_500:setValue(controlDir(base.math.floor(dir+0.5)))
     end
     	
-    function sp_wind_500:onChange()
+	function sp_wind_500:onChange()
 		local speed, dir = dllWeather.updateSpeedDirForOtherLevel(500, 11, sp_wind_500UnitSpinBox:getValue(), controlDir(e_wind_500:getValue()))
         vdata.wind.atGround.speed = speed
         vdata.wind.atGround.dir = dir
-        
         sp_wind_groundUnitSpinBox:setValue(vdata.wind.atGround.speed)        
         e_wind_ground:setValue(controlDir(vdata.wind.atGround.dir))
         d_wind_ground:setValue(controlDir(vdata.wind.atGround.dir))
@@ -1078,11 +1077,11 @@ local function createWindPanel()
 	
     resize()
 end    
-
+  
 local function createTurbulencePanel()
     turbulence = box.turbulence
     sp_turb_ground = turbulence.sp_turb_ground
-	local minT, maxT = sp_turb_ground:getRange()
+	local minT, maxT = sp_turb_ground:getRange()										 
     sp_turb_groundUnitSpinBox = U.createUnitSpinBox(turbulence.sTurb, sp_turb_ground, U.speedUnitsWind, minT, maxT, 0.1)
     
     function sp_turb_ground:onChange()
@@ -1092,13 +1091,13 @@ end
 
 local function createFogPanel()
     pFog = box.pFog
-	sCannotFog 			= pFog.sCannotFog
+    	sCannotFog 			= pFog.sCannotFog
 	clFogMode 			= pFog.clFogMode
 	pFogParams  		= pFog.pFogParams
 	pNoVisibleFog 		= window.pNoVisibleFog
 	bAddFog				= pFog.bAddFog
 	cbAttached			= pFog.cbAttached
-	
+								   
 	btnDelSkin 			= pNoVisibleFog.btnDel:getSkin()
 	eEditBoxSkin 		= pNoVisibleFog.eEditBox:getSkin()
 	eEditBoxRedSkin 	= pNoVisibleFog.eEditBoxRed:getSkin()
@@ -1108,7 +1107,7 @@ local function createFogPanel()
 	sTimeSkin			= pNoVisibleFog.sTime:getSkin()
 	
 	bAddFog.onChange 	= onChange_bAddFog
-
+											
 	local item
 	item = ListBoxItem.new(cdata.off)
 	item.modeId = 1
@@ -1140,14 +1139,14 @@ local function createFogPanel()
 			}
 		end
 		
-		update()
-	end
+		update()											 
+    end
 end
 
 local function createDustPanel()
     pDust = box.pDust
-	sCannotDust		= pDust.sCannotDust
-    c_enable_dust 	= pDust.c_enable_dust    
+	sCannotDust		= pDust.sCannotDust							 
+    c_enable_dust = pDust.c_enable_dust    
     
     function c_enable_dust:onChange()
         vdata.enable_dust = self:getState()
@@ -1297,21 +1296,31 @@ function create(x, y, w, h)
         show(false)
         toolbar.setWeatherButtonState(false)
     end
-	
-	local valFogTmp = 0
-	for i = 0, 280 do
-		fogSliderValues[i] = valFogTmp
-		
-		if valFogTmp < 1000 then
-			valFogTmp = valFogTmp + 10
-		elseif valFogTmp < 10000 then
-			valFogTmp = valFogTmp + 100
-		elseif valFogTmp < 100000 then
-			valFogTmp = valFogTmp + 1000
-		end	
-	end
         
-    createRegimenPanel()
+	local val = 0
+local i = 0
+
+-- rebuild fog visibility mapping up to 500,000 m
+fogSliderValues = {}
+-- 0..1,000 by 10s
+while val < 1000 do
+    fogSliderValues[i] = val
+    val = val + 10
+    i = i + 1
+end
+-- 1,000..10,000 by 100s
+while val < 10000 do
+    fogSliderValues[i] = val
+    val = val + 100
+    i = i + 1
+end
+-- 10,000..500,000 by 1,000s
+while val <= 500000 do
+    fogSliderValues[i] = val
+    val = val + 1000
+    i = i + 1
+end
+createRegimenPanel()
     
     box = window.box
     box:setSize(w, h-137)	
@@ -1339,7 +1348,7 @@ function create(x, y, w, h)
 	pCycTmpl = pNoVisibleW.pCycTmpl
 	eSunrise = pCont.eSunrise
 	eSunset = pCont.eSunset
-	sUpdateFog = pDate.sUpdateFog
+	sUpdateFog = pDate.sUpdateFog						  
 	
 	bExpandSkin 		= pNoVisibleW.bExpand:getSkin()
 	bRollupSkin			= pNoVisibleW.bRollup:getSkin()	
@@ -1390,7 +1399,7 @@ function create(x, y, w, h)
     AtmRandParam.EllipticityStdDev  = 0.25
     AtmRandParam.RotationStdDev     = 1.0471975511965977461542144610932
 	
-	unitSystem = OptionsData.getUnits()
+	unitSystem = OptionsData.getUnits()								
 end
 	
 
@@ -1444,9 +1453,9 @@ function updateMissionStart(time, date, editMonth)
 	end
 	
     mod_mission.mission.start_time = time
-    updateSeason(time, date, true)	
+    updateSeason(time, date, true)
 	updateFogTime()
-	lastTime = time
+	lastTime = time			
 end
 
 -------------------------------------------------------------------------------
@@ -1466,13 +1475,14 @@ function getFogSliderValue(a_max, a_value)
 			return i
 		end
 	end
-	return 0
+	return 0  	 
 end
-	
+
 -------------------------------------------------------------------------------
 -- Обновление значений виджетов после изменения таблицы vdata
 function update(noUpdateTime)
     vdata.cyclones = vdata.cyclones or {} -- чтобы непадали старые миссии
+		
 	date = mod_mission.mission.date
     start_time = mod_mission.mission.start_time or 28800
 	
@@ -1502,29 +1512,29 @@ function update(noUpdateTime)
     sp_wind_groundUnitSpinBox:setValue(vdata.wind.atGround.speed)
     d_wind_ground:setValue(controlDir(vdata.wind.atGround.dir))
     e_wind_ground:setValue(controlDir(tonumber(vdata.wind.atGround.dir)))
-	
-    local simSpeed500, simDir500 = dllWeather.updateSpeedDirForOtherLevel(11, 500, vdata.wind.atGround.speed, vdata.wind.atGround.dir)
+		
+	local simSpeed500, simDir500 = dllWeather.updateSpeedDirForOtherLevel(11, 500, vdata.wind.atGround.speed, vdata.wind.atGround.dir)
     sp_wind_500UnitSpinBox:setValue(simSpeed500)
     e_wind_500:setValue(controlDir(base.math.floor(simDir500+0.5)))
-	
-    sp_wind_2000UnitSpinBox:setValue(vdata.wind.at2000.speed)
+    
+	sp_wind_2000UnitSpinBox:setValue(vdata.wind.at2000.speed)
     d_wind_2000:setValue(controlDir(vdata.wind.at2000.dir))
     e_wind_2000:setValue(controlDir(vdata.wind.at2000.dir))
     sp_wind_8000UnitSpinBox:setValue(vdata.wind.at8000.speed)
     d_wind_8000:setValue(controlDir(vdata.wind.at8000.dir))
     e_wind_8000:setValue(controlDir(vdata.wind.at8000.dir))
     sp_turb_groundUnitSpinBox:setValue(vdata.groundTurbulence/10)
-	sl_dust_vis:setValue(vdata.dust_density)
+    sl_dust_vis:setValue(vdata.dust_density)
     e_dust_visUnitSpinBox:setValue(vdata.dust_density)
     updatePrecptns()
-    
-	fillFogParamPanel()
 	
-    if vdata.fog2.mode == 1 then
+	fillFogParamPanel()
+ 
+   if vdata.fog2.mode == 1 then
 		c_enable_dust:setEnabled(true)
 		sCannotDust:setVisible(false)
-	else
-		c_enable_dust:setEnabled(false)
+    else
+    c_enable_dust:setEnabled(false)
 		sCannotDust:setVisible(true)
 	end
 	
@@ -1558,25 +1568,25 @@ function update(noUpdateTime)
 			
 			v.sbManualVUnitSpinBox:setValue(vdata.fog2.manual[i].visibility)  
 			v.sbManualTUnitSpinBox:setValue(vdata.fog2.manual[i].thickness)
-			v.hsManualV:setValue(getFogSliderValue(280, vdata.fog2.manual[i].visibility))  
+			v.hsManualV:setValue(getFogSliderValue(#fogSliderValues - 1, vdata.fog2.manual[i].visibility))  
 			v.hsManualT:setValue(getFogSliderValue(140, vdata.fog2.manual[i].thickness)) 
 		end		
-	end
+    end
 	
 	c_enable_dust:setState(vdata.enable_dust)
 	
 	if (vdata.enable_dust == true) then
 		sl_dust_vis:setEnabled(true)
-        e_dust_vis:setEnabled(true)
-		
+        e_dust_vis:setEnabled(true)	
+
 		sCannotFog:setVisible(true)
-		clFogMode:setEnabled(false)
+		clFogMode:setEnabled(false)		
     else
 		sl_dust_vis:setEnabled(false)
-        e_dust_vis:setEnabled(false)
-		
+        e_dust_vis:setEnabled(false)	
+
 		sCannotFog:setVisible(false)
-		clFogMode:setEnabled(true)
+		clFogMode:setEnabled(true)		
     end
     
     if (vdata.atmosphere_type == regimenDynamic) then    
@@ -1762,7 +1772,7 @@ function updateSunMoon()
 	local datum = OptionsData.getMiscellaneous('Datum')
 	if datum == 2 then
 		lat, long = UC.LL_datum_convert(1, 2, lat, long)
-	end	
+	end													
 	
 	local coordDisplay = OptionsData.getMiscellaneous('Coordinate_Display')
 	local SummerTimeDelta = terrainDATA.getTerrainDATA('SummerTimeDelta')
@@ -1779,10 +1789,27 @@ function updateSunMoon()
 		eCoords:setText(Terrain.GetMGRScoordinates(x,y))
 	end
 
-	local sunriseSunsetFound, sunRiseSec, sunSetSec = DCS.getSunriseSunsetSecond(lat, long, 
+
+	local lastELEV = nil
+	local sunRiseSec = nil
+	local sunSetSec = nil
+
+	for i=0, 23 do	
+		local degAZ, degELEV = DCS.getSunAzimuthElevation(lat, long, 
 										mod_mission.mission.date.Year,
 										mod_mission.mission.date.Month,
-										mod_mission.mission.date.Day)
+										mod_mission.mission.date.Day,
+										(i-SummerTimeDelta) *3600)										
+		
+		if lastELEV ~= nil and lastELEV < 0 and  degELEV > 0 then
+			sunRiseSec = (i - degELEV/(degELEV - lastELEV))*3600
+		end
+		
+		if lastELEV ~= nil and lastELEV > 0 and  degELEV < 0 then
+			sunSetSec = (i + degELEV/(lastELEV - degELEV))*3600
+		end
+		lastELEV = degELEV
+	end
 	
 	--позиция солнца
 	local degAZ,degELEV = DCS.getSunAzimuthElevation(lat, long, 
@@ -1813,7 +1840,7 @@ function updateSunMoon()
 		sText:setVisible(false)
 	end
 	
-	if sunriseSunsetFound then
+	if sunRiseSec then
 		local sunRiseAZ, t2 = DCS.getSunAzimuthElevation(lat, long, 
 											mod_mission.mission.date.Year,
 											mod_mission.mission.date.Month,
@@ -1825,7 +1852,7 @@ function updateSunMoon()
 		eSunrise:setText("-")
 	end	
 	
-	if sunriseSunsetFound then
+	if sunSetSec then
 		local sunSetAZ, t4 = DCS.getSunAzimuthElevation(lat, long, 
 										mod_mission.mission.date.Year,
 										mod_mission.mission.date.Month,
@@ -1835,7 +1862,7 @@ function updateSunMoon()
 		eSunset:setText(U.secToString(sunSetSec)..base.string.format(" %.1f°",sunSetAZ))
 	else
 		eSunset:setText("-")	
-	end
+	end		   
 	
 	local tmp1, tmp2, prevMoonPHASE  = DCS.getMoonAzimuthElevationPhase(lat, long, 
 										mod_mission.mission.date.Year,
@@ -2209,8 +2236,8 @@ function loadDefaultWeather()
 	for id, preset in base.pairs(presetsHalo.crystalsPresets) do
 		base.table.insert(tmp, preset)
 	end	
-	
-	lastTime = mod_mission.mission.start_time
+
+	lastTime = mod_mission.mission.start_time									  
     loadAllPresets(false)
     loadPreset(cdata.defaultWeather)  
 
@@ -2228,11 +2255,9 @@ function setData(a_data)
     if not vdata.atmosphere_type then
         vdata.atmosphere_type = regimenStandard
     end
-	
-	lastTime = mod_mission.mission.start_time
-	
+	lastTime = mod_mission.mission.start_time									  
     fixTurbulence(a_data)
-	fixFog(a_data)
+	fixFog(a_data)		   
 end
 
 function fixTurbulence(a_data)
@@ -2261,12 +2286,10 @@ function fixFog(a_data, isPreset)
 	end
 	-- a_data.enable_fog = nil
 	-- a_data.fog = nil
-	
 	if a_data.fog2 and a_data.fog2.mode ~= 1 then
 		a_data.enable_dust = false
-	end
-end
-
+	end										  
+end						 
 function updateUnitSystem()
 	unitSystem = OptionsData.getUnits()
 	
@@ -2277,9 +2300,9 @@ function updateUnitSystem()
 
     e_baseUnitSpinBox:setUnitSystem(unitSystem)  
     e_thicknessUnitSpinBox:setUnitSystem(unitSystem) 
-    sp_qnhUnitSpinBox:setUnitSystem(unitSystem)  
-
-	e_dust_visUnitSpinBox:setUnitSystem(unitSystem)   
+    sp_qnhUnitSpinBox:setUnitSystem(unitSystem)   
+    
+    e_dust_visUnitSpinBox:setUnitSystem(unitSystem)   
 
     sp_turb_groundUnitSpinBox:setUnitSystem(unitSystem)   
 
@@ -2653,7 +2676,7 @@ function onFocus_cbManualV(self, focused)
 		vdata.fog2.manual[self.num].visibility = value
 		fogManualWidgets[self.num].sbManualVUnitSpinBox:setValue(value)
 		
-		local hsValue = getFogSliderValue(280, value)
+		local hsValue = getFogSliderValue(#fogSliderValues - 1, value)
 		
 		fogManualWidgets[self.num].hsManualV:setValue(hsValue)
 	end	
@@ -2786,7 +2809,7 @@ function fillFogParamPanel()
 			local sbManualV = SpinBox.new("")
 			sbManualV:setBounds(127, offsetY, 95, 20)
 			sbManualV:setSkin(spSpinBoxSkin)
-			sbManualV:setRange(0, 100000)
+			sbManualV:setRange(0, 500000)
 			sbManualV:setTooltipText(_("zero value = no fog"))
 			sbManualV.num = i				
 			pFogParams:insertWidget(sbManualV)	
@@ -2802,7 +2825,7 @@ function fillFogParamPanel()
 			
 			local hsManualV = Slider.new()
 			hsManualV:setBounds(117, offsetY+20, 130, 20)
-			hsManualV:setRange(0, 280)
+			hsManualV:setRange(0, #fogSliderValues - 1)
 			hsManualV.num = i			
 			hsManualV:setSkin(hsSliderSkin)	
 			pFogParams:insertWidget(hsManualV)
@@ -2811,7 +2834,7 @@ function fillFogParamPanel()
 			local sbManualT = SpinBox.new("")
 			sbManualT:setBounds(265, offsetY, 75, 20)
 			sbManualT:setSkin(spSpinBoxSkin)
-			sbManualT:setRange(0, 5000)
+			sbManualT:setRange(0, 14000)
 			sbManualT:setTooltipText(_("zero value = no fog"))
 			sbManualT.num = i			
 			pFogParams:insertWidget(sbManualT)
@@ -2827,7 +2850,7 @@ function fillFogParamPanel()
 			
 			local hsManualT = Slider.new()
 			hsManualT:setBounds(255, offsetY+20, 110, 20)
-			hsManualT:setRange(0, 140)
+			hsManualT:setRange(0, 220)
 			hsManualT.num = i	
 			hsManualT:setSkin(hsSliderSkin)	
 			pFogParams:insertWidget(hsManualT)
