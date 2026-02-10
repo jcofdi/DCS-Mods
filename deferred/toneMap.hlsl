@@ -6,20 +6,22 @@
 #include "common/ambientCube.hlsl"
 #include "deferred/filmicCurve.hlsl"
 
+// ACES encoding https://www.shadertoy.com/view/Mdfcz7
+
 #define OPERATOR_LUT 0
 
 Buffer<float>			histogram;
 Texture1D<float>		tonemapLUT;
 
 float getAvgLuminanceClamped() {
-	return clamp(getAverageLuminance(), sceneLuminanceMin, sceneLuminanceMax);
+	return clamp(getAverageLuminance(), sceneLuminanceMin, sceneLuminanceMax);//todo: унести в предрасчет?
 }
 
 float getAvgLuminanceClampedCockpit() {
-	return clamp(getAverageLuminanceCockpit(), sceneLuminanceMin, sceneLuminanceMax);
+	return clamp(getAverageLuminanceCockpit(), sceneLuminanceMin, sceneLuminanceMax);//todo: унести в предрасчет?
 }
 
-float getLinearExposure(float averageLuminance, float exposureCorrection = 0)
+float getLinearExposure(float averageLuminance, float exposureCorrection = 0) 
 {
 	if(0)//old-school
 	{
@@ -28,7 +30,8 @@ float getLinearExposure(float averageLuminance, float exposureCorrection = 0)
 	}
 	else
 	{
-		float linearExposure = 0.18 / averageLuminance;
+		float linearExposure = 0.18 / averageLuminance; 
+
 		return exp2(log2(linearExposure) + dcExposureCorrection);
 	}
 }
@@ -39,143 +42,28 @@ float getLinearExposureMFD(float averageLuminance) {
 	return 0.5 / (pow(averageLuminance, exposureKey) + toneMapFactor);
 }
 
-// Modified desaturation - less aggressive, no blue shift
-float3 desturateColorHack(float3 linearColor)
-{
-	const float3 LUM = { 0.2126, 0.7152, 0.0722 };  // Standard Rec.709 luminance weights
-	float lum = dot(linearColor, LUM);
-	
-	// Reduce desaturation strength and only apply to very dark areas
-	float saturationAmount = sqrt(min(1.0, lum / (sceneLuminanceMin * 0.2)));
-	saturationAmount = max(0.7, saturationAmount);  // Never desaturate more than 30%
-	
-	return lerp(lum, linearColor, saturationAmount);
-}
-
-//============================================================================
-// Hable Filmic Curve - Improved Version
-//============================================================================
-
-// TUNING PARAMETERS
-static const float INPUT_SCALE = 0.6;           // Match highlight behavior
-static const float DESATURATION_AMOUNT = 0.0;   // Adjust if needed
-
-float3 ToneMap_Filmic_JohnHable(float3 hdrColor)
-{
-	hdrColor *= INPUT_SCALE;
-	
-	if (DESATURATION_AMOUNT > 0.0)
-	{
-		float3 desaturated = desturateColorHack(hdrColor);
-		hdrColor = lerp(hdrColor, desaturated, DESATURATION_AMOUNT);
-	}
-	
-	CurveParamsDirect params;
-	params.m_x0 = 0.25;
-	params.m_y0 = 0.30;   // Shadow lift for overall brightness
-	params.m_x1 = 0.70;
-	params.m_y1 = 0.75;   // Moderate shoulder
-	params.m_W = 1.0;
-	params.m_gamma = 1.10; // Midtone boost
-	params.m_overshootX = 0.0;
-	params.m_overshootY = 0.0;
-	
-	FullCurve curve;
-	CreateCurve(curve, params);
-	
-	float3 result;
-	result.r = FullCurveEval(curve, hdrColor.r);
-	result.g = FullCurveEval(curve, hdrColor.g);
-	result.b = FullCurveEval(curve, hdrColor.b);
-	
-	return result;
-}
-
-//============================================================================
-// Scene-Adaptive Version (COMMENTED OUT - Enable after tuning)
-//============================================================================
-
 /*
-static const float NIGHT_THRESHOLD = 0.18;
-static const float DAY_THRESHOLD   = 0.78;
-
-CurveParamsDirect GetDefaultCurveParams()
-{
-	CurveParamsDirect p;
-	p.m_x0 = 0.25;
-	p.m_y0 = 0.25;
-	p.m_x1 = 0.70;
-	p.m_y1 = 0.78;
-	p.m_W = 1.2;
-	p.m_gamma = 1.0;
-	p.m_overshootX = 0.0;
-	p.m_overshootY = 0.0;
-	return p;
-}
-
-CurveParamsDirect GetDaylightCurveParams()
-{
-	CurveParamsDirect p;
-	p.m_x0 = 0.25;
-	p.m_y0 = 0.30;  // Shadow lift for daylight
-	p.m_x1 = 0.70;
-	p.m_y1 = 0.78;
-	p.m_W = 1.2;
-	p.m_gamma = 1.0;
-	p.m_overshootX = 0.0;
-	p.m_overshootY = 0.0;
-	return p;
-}
-
-CurveParamsDirect GetSceneBlendedCurve(float avgLum)
-{
-	CurveParamsDirect cNight = GetDefaultCurveParams();
-	CurveParamsDirect cDay   = GetDaylightCurveParams();
-	
-	float blendFactor = smoothstep(NIGHT_THRESHOLD, DAY_THRESHOLD, avgLum);
-	
-	CurveParamsDirect p;
-	p.m_x0 = lerp(cNight.m_x0, cDay.m_x0, blendFactor);
-	p.m_y0 = lerp(cNight.m_y0, cDay.m_y0, blendFactor);
-	p.m_x1 = lerp(cNight.m_x1, cDay.m_x1, blendFactor);
-	p.m_y1 = lerp(cNight.m_y1, cDay.m_y1, blendFactor);
-	p.m_W = lerp(cNight.m_W, cDay.m_W, blendFactor);
-	p.m_gamma = lerp(cNight.m_gamma, cDay.m_gamma, blendFactor);
-	p.m_overshootX = lerp(cNight.m_overshootX, cDay.m_overshootX, blendFactor);
-	p.m_overshootY = lerp(cNight.m_overshootY, cDay.m_overshootY, blendFactor);
-	
-	return p;
-}
-
-float3 ToneMap_Filmic_JohnHable_SceneAdaptive(float3 hdrColor)
-{
-	float avgLum = getAvgLuminanceClamped();
-	
-	hdrColor *= INPUT_SCALE;
-	
-	if (DESATURATION_AMOUNT > 0.0)
-	{
-		float3 desaturated = desturateColorHack(hdrColor);
-		hdrColor = lerp(hdrColor, desaturated, DESATURATION_AMOUNT);
-	}
-	
-	CurveParamsDirect params = GetSceneBlendedCurve(avgLum);
-	
-	FullCurve curve;
-	CreateCurve(curve, params);
-	
-	float3 result;
-	result.r = FullCurveEval(curve, hdrColor.r);
-	result.g = FullCurveEval(curve, hdrColor.g);
-	result.b = FullCurveEval(curve, hdrColor.b);
-	
-	return result;
-}
+	//полосочками картинка
+    vec2 center = vec2(iResolution.x/2., iResolution.y/2.);
+    vec2 uv = fragCoord.xy;
+    
+    float scale = 1.;
+    float radius = .5;
+    vec2 d = uv - center;
+    float r = length(d)/1000.;
+    float a = atan(d.y,d.x) + scale*(radius-r)/radius;
+    //a += .1 * iGlobalTime;
+    vec2 uvt = center+r*vec2(cos(a),sin(a));
+    
+	vec2 uv2 = fragCoord.xy / iResolution.xy;
+    float c = ( .75 + .25 * sin( uvt.x * 1000. ) );
+    vec4 color = texture2D( iChannel0, uv2 );
+    float l = luma( color );
+    float f = smoothstep( .5 * c, c, l );
+	f = smoothstep( 0., .5, f );
+    
+	fragColor = vec4( vec3( f ),.0);
 */
-
-//============================================================================
-// Legacy Tonemapping Operators
-//============================================================================
 
 float3 ToneMap_Hejl2015(float3 color, float whitePoint) {
 	float4 vh = float4(color, whitePoint);
@@ -184,14 +72,47 @@ float3 ToneMap_Hejl2015(float3 color, float whitePoint) {
 	return vf.rgb / vf.www;
 }
 
+//http://filmicworlds.com/blog/filmic-tonemapping-with-piecewise-power-curves/
+#if 0 
+float3 ToneMap_Filmic_JohnHable(float3 hdrColor)
+{	
+	CurveParamsDirect params;
+	params.m_x0 = m_x0;
+	params.m_y0 = m_y0;
+	params.m_x1 = m_x1;
+	params.m_y1 = m_y1;
+	params.m_W = m_W;
+	params.m_overshootX = m_overshootX;
+	params.m_overshootY = m_overshootY;
+	params.m_gamma = m_gamma;
+	
+	FullCurve curve;
+	CreateCurve(curve, params);
+
+	return float3(FullCurveEval(curve, hdrColor.r), FullCurveEval(curve, hdrColor.g), FullCurveEval(curve, hdrColor.b));
+}
+#endif
+
+
+float3 desturateColorHack(float3 linearColor)
+{
+	const float3 LUM = { 0.2125, 0.7154, 0.0721 };
+	float lum = dot(linearColor, LUM);
+
+	return lerp(lum, linearColor, sqrt( min(1, lum / sceneLuminanceMin * 0.4)) );
+}
+
 #if OPERATOR_LUT
+
+
+//https://www.desmos.com/calculator/auxwpmmq3o
 float3 ToneMap_Filmic_Unrealic(float3 linearColor)
 {
 	linearColor = desturateColorHack(linearColor);
 
 	float3 logColor = log10(linearColor);
 
-	float3 u = (logColor - LUTLogLuminanceMin) / (LUTLogLuminanceMax - LUTLogLuminanceMin);
+	float3 u = (logColor - LUTLogLuminanceMin) / (LUTLogLuminanceMax - LUTLogLuminanceMin);//todo: оптимизировать
 
 	float3 tonmappedColor;
 	tonmappedColor.r = tonemapLUT.SampleLevel(gBilinearClampSampler, u.r, 0).r;
@@ -258,18 +179,14 @@ float3 ToneMap_atmHDR(float3 L) {
 float3 ToneMap_Linear(float3 L) {
 	return L;
 }
-
+//https://www.desmos.com/calculator/auxwpmmq3o
 float3 ToneMap_Exp(float3 L) {
 	return pow(max(0, 1 - exp(-L*tmPower)), tmExp);
 }
-
+//https://www.desmos.com/calculator/auxwpmmq3o
 float3 ToneMap_Exp2(float3 L) {
 	return (1 - exp(-L*tmPower)) * (1 - exp(-L*tmExp));
 }
-
-//============================================================================
-// Main Tonemap Dispatcher
-//============================================================================
 
 float3 toneMap(float3 linearColor, uniform int tonemapOperator)
 {
@@ -277,17 +194,11 @@ float3 toneMap(float3 linearColor, uniform int tonemapOperator)
 	
 	switch(tonemapOperator)
 	{
-	case TONEMAP_OPERATOR_LINEAR:
-		tonmappedColor = ToneMap_Linear(linearColor);
-		break;
-		
-	case TONEMAP_OPERATOR_EXPONENTIAL:
-		tonmappedColor = ToneMap_Exp(linearColor);
-		break;
-		
-	case TONEMAP_OPERATOR_FILMIC:
-		tonmappedColor = ToneMap_Filmic_JohnHable(linearColor);
-		break;
+	case TONEMAP_OPERATOR_LINEAR:		tonmappedColor = ToneMap_Linear(linearColor); break;
+	case TONEMAP_OPERATOR_EXPONENTIAL:	tonmappedColor = ToneMap_Exp(linearColor); break;
+	case TONEMAP_OPERATOR_FILMIC:		tonmappedColor = ToneMap_Filmic_Unrealic(linearColor); break;
+	// case TONEMAP_OPERATOR_FILMIC:		tonmappedColor = ToneMap_Filmic_JohnHable(linearColor); break;
+	// case TONEMAP_OPERATOR_CUSTOM:		tonmappedColor = ToneMap_Custom(linearColor); break;
 	}
 
 	return tonmappedColor;
@@ -311,9 +222,13 @@ float3 simpleToneMap(float3 color) {
 	return LinearToGammaSpace(tonmappedColor);
 }
 
-//============================================================================
-// Debug Visualization
-//============================================================================
+
+
+
+
+
+
+
 
 #define drawGrid(uv, eps) ((abs(uv.x-0.5)<eps || abs(uv.x-1.0)<eps || abs(uv.x-1.5)<eps || abs(uv.y - 0.5)<eps) ? 1.0 : 0.0)
 
@@ -351,6 +266,7 @@ void plotQuad(float2 pixel, float2 quadBottomLeft, float2 quadSize, float4 color
 float LuminanceToHistogramPos(float luminance)
 {
 	float logLuminance = log2(luminance);
+	// return saturate((logLuminance - inputLuminanceMin) / (inputLuminanceMax - inputLuminanceMin));
 	return saturate(logLuminance * inputLuminanceScaleOffset.x + inputLuminanceScaleOffset.y);
 }
 
@@ -359,19 +275,28 @@ void debugDraw(float2 uvNorm, float2 pixel, inout float3 sourceColor)
 #ifdef PLOT_TONEMAP_FUNCION
 	const float plotOpacity = 0.7;
 	float2 p = uvNorm * float2(2.5, 1);
+	// p.x = exp2((p.x-1.5) * 5);
 	p.x = pow(10, (p.x-1.5) * 2);
-	plotFunction(uvNorm, p, ToneMap_Filmic_JohnHable, sourceColor, float4(0,1,0,0.5*plotOpacity));
+	// plotGrid(p, sourceColor, float4(0,0,0, 0.2*plotOpacity));
+	// plotFunction(uvNorm, p, ToneMap_Custom, sourceColor, float4(1,0,0,0.5*plotOpacity));
+	// plotFunction(uvNorm, p, ToneMap_atmHDR, sourceColor, float4(0,1,0,0.5*plotOpacity));
+	// plotFunction(uvNorm, p, ToneMap_Linear, sourceColor, float4(0,1,0,0.5*plotOpacity));
+	// plotFunction(uvNorm, p, ToneMap_Exp, sourceColor, float4(0,0,1,0.5*plotOpacity));
+	plotFunction(uvNorm, p, ToneMap_Filmic_Unrealic, sourceColor, float4(0,0,1,0.5*plotOpacity));
+	// plotFunction(uvNorm, p, ToneMap_Filmic_JohnHable, sourceColor, float4(0,0,0, 0.5*plotOpacity));
 #endif
 
 #ifdef PLOT_AVERAGE_LUMINANCE
 	float2 lumPix = pixel;
 	lumPix.y = 768 - lumPix.y;
 	plotNumber(lumPix, getAvgLuminanceClamped(), sourceColor);
+	// plotNumber(lumPix, log2(getAvgLuminanceClamped()+expOffset), sourceColor);
+	// plotNumber(lumPix, histogram[1]/1000.0, sourceColor);
 #endif
 
 #ifdef PLOT_HISTOGRAM
-	const float2 histogramPos = {50, 400};
-	const float2 histogramSize = {200, 150};
+	const float2 histogramPos = {50, 400};// from screen top-left, px
+	const float2 histogramSize = {200, 150};//px, px
 	const uint nHistogramBins = 32;
 	const float4 histogramColor = float4(0.7,1,0,0.5);
 	const float4 borderColor = float4(0.7,1,0,0.5);
@@ -383,18 +308,20 @@ void debugDraw(float2 uvNorm, float2 pixel, inout float3 sourceColor)
 	[loop]
 	for(uint i=0; i<nHistogramBins; ++i)
 		plotQuad(hisPix, float2(histogramPos.x + (binWidth+1)*i, 0), float2(binWidth, 4*histogramSize.y*histogram[i]/1.0), histogramColor, sourceColor);
-	
+	//рамка
 	float2 size = float2((binWidth+1)*nHistogramBins, histogramSize.y);
-	plotQuad(hisPix, float2(histogramPos.x, 0),			 float2(1, size.y),			 borderColor, sourceColor);
-	plotQuad(hisPix, float2(histogramPos.x + size.x, 0), float2(1, histogramSize.y), borderColor, sourceColor);
-	plotQuad(hisPix, float2(histogramPos.x, -1),		 float2(size.x, 1),			 borderColor, sourceColor);
-	plotQuad(hisPix, float2(histogramPos.x, size.y),	 float2(size.x, 1),			 borderColor, sourceColor);
+	plotQuad(hisPix, float2(histogramPos.x, 0),			 float2(1, size.y),			 borderColor, sourceColor);//vert
+	plotQuad(hisPix, float2(histogramPos.x + size.x, 0), float2(1, histogramSize.y), borderColor, sourceColor);//vert
+	plotQuad(hisPix, float2(histogramPos.x, -1),		 float2(size.x, 1),			 borderColor, sourceColor);//hor
+	plotQuad(hisPix, float2(histogramPos.x, size.y),	 float2(size.x, 1),			 borderColor, sourceColor);//hor
 	
+	//средняя освещенность
 	float pos = LuminanceToHistogramPos(avgLuminance[LUMINANCE_AVERAGE].x);
-	plotQuad(hisPix, float2(histogramPos.x + pos * size.x, 0),			float2(1, size.y),	float4(1,1,1,0.7), sourceColor);
-	plotQuad(hisPix, float2(histogramPos.x + percentMin * size.x, 0),	float2(1, size.y),	float4(0,0,1,0.2), sourceColor);
-	plotQuad(hisPix, float2(histogramPos.x + percentMax * size.x, 0),	float2(1, size.y),	float4(0,0,1,0.2), sourceColor);
+	plotQuad(hisPix, float2(histogramPos.x + pos * size.x, 0),			float2(1, size.y),	float4(1,1,1,0.7), sourceColor);//vertpos
+	plotQuad(hisPix, float2(histogramPos.x + percentMin * size.x, 0),	float2(1, size.y),	float4(0,0,1,0.2), sourceColor);//vertpos
+	plotQuad(hisPix, float2(histogramPos.x + percentMax * size.x, 0),	float2(1, size.y),	float4(0,0,1,0.2), sourceColor);//vertpos
 #endif
 }
+
 
 #endif
