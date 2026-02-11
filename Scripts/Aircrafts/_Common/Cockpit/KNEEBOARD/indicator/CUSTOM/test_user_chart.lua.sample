@@ -1,0 +1,66 @@
+dofile(LockOn_Options.common_script_path.."KNEEBOARD/indicator/definitions.lua")
+SetScale(FOV)
+--[[
+sample page,
+some agreements used in this file:
++-----+-----+
+|	  |		|
+|	  |		|
+|	  |		|
+|	  |		|
++-----+-----+
+|	  |		|
+|	  |		|
+|	  |		|
+|	  |		|
++-----+-----+
+
+full page width  : 2
+full page height : full_page_width * GetAspect()
+center of page : 0,0
+Upper left  corner : -1 , GetAspect()
+Upper right corner :  1 , GetAspect()
+Lower left  corner : -1 ,-GetAspect()
+Lower right corner :  1 ,-GetAspect()
+
+some basic functions  
+
+add_picture (image_name,
+			 UL_X, -- coordinates of UL corner of image from UL corner of page
+			 UL_Y, -- coordinates of UL corner of image from UL corner of page
+			 W,	   -- width
+			 H,	   -- height
+			 tx_ULX, -- texture coordinates (optional)
+			 tx_ULY,-- texture coordinates(optional)
+			 tx_W,	-- texture coordinates(optional)
+			 tx_H)  -- texture coordinates(optional)
+			 
+			 
+add_picture("pilot_KA50_notepad",
+			 0,
+			 0,
+			 2,
+			 2*GetAspect(),
+			 0,
+			 0,
+			 1,
+			 1)			 
+will create full coverage of page by pilot_KA50_notepad texture
+
+add_text(text,
+		 UL_X, -- coordinates of UL corner of image from UL corner of page
+	     UL_Y  -- coordinates of UL corner of image from UL corner of page 
+		 )
+text can include tab symbols and new line symbols
+
+Picture example:
+add_picture("Scripts\Aircrafts\_Common\Cockpit\KNEEBOARD\indicator\CUSTOM\picture_name")
+
+
+--]]
+dx  = 50/512
+add_picture("pilot_KA50_notepad",			0,0,2,2*GetAspect(),
+			 dx,0,1 - 2*dx,1)
+
+add_text("Performance\nMaximum speed: 437 mph (703 km/h) at 25,000 ft (7,600 m)\nCruise speed: 362 mph (580 km/h)\nStall speed: 100 mph (160 km/h)\nRange: 1,650 mi (2,755 km) with external tanks\nService ceiling: 41,900 ft (12,800 m)\nRate of climb: 3,200 ft/min (16.3 m/s)\nWing loading: 39 lb/ft? (192 kg/m?)\nPower/mass: 0.18 hp/lb (300 W/kg)\nLift-to-drag ratio: 14.6\nRecommended Mach limit 0.8",
+		 0.05,0.05)

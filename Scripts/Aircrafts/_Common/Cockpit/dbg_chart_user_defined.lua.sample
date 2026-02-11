@@ -1,0 +1,12 @@
+is_enabled	   = true
+mapped_params  =
+{
+[1] = "COCKPIT_PARAM_1",
+[2] = "COCKPIT_PARAM_2",
+}
+
+abscissa_limits 	= {0,25}
+ordinata_limits 	= {-1,5}
+abscissa_grid_step 	= 5.0
+ordinata_grid_step  = 0.5
+
