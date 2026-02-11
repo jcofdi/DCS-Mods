@@ -1,5 +1,0 @@
-#define SELF_ILLUMINATION_ADDITIVE_MATERIAL
-#define SELF_ILLUMINATION_COLOR_MATERIAL
-#define COLOR_ONLY
-
-#include "def_material.fx"
