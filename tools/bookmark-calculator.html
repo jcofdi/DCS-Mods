@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DCS Bookmark Calculator</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1a1a2e;
+      color: #c9d1d9;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #58a6ff;
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #8b949e;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 1.2rem;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card h2 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 0.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      color: #8b949e;
+      margin-bottom: 0.3rem;
+    }
+
+    textarea, input[type="text"], input[type="number"] {
+      width: 100%;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #e6edf3;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.15s;
+      resize: vertical;
+    }
+
+    textarea:focus, input[type="text"]:focus, input[type="number"]:focus {
+      border-color: #58a6ff;
+    }
+
+    textarea {
+      font-family: 'Courier New', Courier, monospace;
+      min-height: 4.5rem;
+    }
+
+    .field-group {
+      margin-bottom: 1rem;
+    }
+
+    .row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .row .field-group {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .row-inline {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .row-inline .field-group {
+      flex: 1;
+      min-width: 160px;
+    }
+
+    .fov-field {
+      max-width: 130px;
+    }
+
+    .fov-field input {
+      max-width: 100%;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: background 0.15s, transform 0.08s;
+    }
+
+    button:active { transform: scale(0.97); }
+
+    .btn-primary {
+      background: #238636;
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #2ea043; }
+
+    .btn-copy {
+      background: #21262d;
+      color: #c9d1d9;
+      border: 1px solid #30363d;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .btn-copy:hover { background: #30363d; }
+
+    .btn-copy.copied {
+      background: #1f6feb;
+      color: #fff;
+      border-color: #1f6feb;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin: 0.2rem 0 0.6rem;
+    }
+
+    .output-block {
+      position: relative;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.84rem;
+      color: #aff3b8;
+      white-space: pre;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+      min-height: 2.6rem;
+      word-break: break-all;
+    }
+
+    .output-block.lua-block {
+      color: #79c0ff;
+    }
+
+    .output-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .output-header label {
+      margin: 0;
+      font-size: 0.82rem;
+      color: #8b949e;
+    }
+
+    .error-msg {
+      background: #3d1010;
+      border: 1px solid #8b2020;
+      border-radius: 6px;
+      color: #ff7b72;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.84rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .error-msg.visible { display: block; }
+
+    .separator {
+      border: none;
+      border-top: 1px solid #21262d;
+      margin: 1.2rem 0;
+    }
+
+    footer {
+      text-align: center;
+      color: #484f58;
+      font-size: 0.75rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 DCS Bookmark Calculator</h1>
+  <p class="subtitle">Convert world-space camera coordinates into object-local bookmark values (assuming 0° heading)</p>
+
+  <!-- Inputs -->
+  <div class="card">
+    <h2>Inputs</h2>
+
+    <div class="field-group">
+      <label for="centerInput">Center Reference <span style="color:#484f58">(paste the edge_pos from your zeroed-out center bookmark)</span></label>
+      <textarea id="centerInput" rows="2" spellcheck="false"
+        placeholder="-camera -318.258629 0.019752 635.461071 -cameradir 0.999975 0.006949 -0.001353"></textarea>
+    </div>
+
+    <div class="field-group">
+      <label for="cameraInput">Camera Position <span style="color:#484f58">(paste the edge_pos for the desired camera angle)</span></label>
+      <textarea id="cameraInput" rows="2" spellcheck="false"
+        placeholder="-camera -318.258732 0.021203 635.463206 -cameradir 0.994649 -0.096870 -0.035900"></textarea>
+    </div>
+
+    <div class="row-inline">
+      <div class="field-group">
+        <label for="nameInput">Bookmark Name</label>
+        <input type="text" id="nameInput" placeholder="e.g. Cockpit_Front" />
+      </div>
+      <div class="field-group fov-field">
+        <label for="fovInput">FOV</label>
+        <input type="number" id="fovInput" value="78" min="1" max="170" />
+      </div>
+    </div>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <hr class="separator" />
+
+    <div class="actions">
+      <button class="btn-primary" id="calcBtn">Calculate</button>
+    </div>
+  </div>
+
+  <!-- Outputs -->
+  <div class="card" id="outputCard" style="display:none">
+    <h2>Results</h2>
+
+    <div class="output-header">
+      <label>Camera String</label>
+      <button class="btn-copy" id="copyCamBtn">Copy</button>
+    </div>
+    <div class="output-block" id="camOutput"></div>
+
+    <div class="output-header" style="margin-top:1rem">
+      <label>Lua Bookmark Entry</label>
+      <button class="btn-copy" id="copyLuaBtn">Copy</button>
+    </div>
+    <div class="output-block lua-block" id="luaOutput"></div>
+  </div>
+
+  <footer>
+    DCS Mods — Bookmark Calculator &nbsp;|&nbsp; Assumes aircraft heading = 0°
+  </footer>
+
+  <script>
+    const DEFAULT_FOV = 78;
+
+    const centerInput = document.getElementById('centerInput');
+    const cameraInput = document.getElementById('cameraInput');
+    const nameInput   = document.getElementById('nameInput');
+    const fovInput    = document.getElementById('fovInput');
+    const calcBtn     = document.getElementById('calcBtn');
+    const errorMsg    = document.getElementById('errorMsg');
+    const outputCard  = document.getElementById('outputCard');
+    const camOutput   = document.getElementById('camOutput');
+    const luaOutput   = document.getElementById('luaOutput');
+    const copyCamBtn  = document.getElementById('copyCamBtn');
+    const copyLuaBtn  = document.getElementById('copyLuaBtn');
+
+    // Parse an edge_pos string: handles surrounding quotes, full assignment, extra whitespace.
+    // Returns { x, y, z, dx, dy, dz } or throws on failure.
+    function parseEdgePos(raw) {
+      // Strip surrounding quotes and optional Lua assignment prefix
+      let s = raw.trim().replace(/^["']|["']$/g, '').trim();
+
+      // Match -camera X Y Z -cameradir DX DY DZ (any whitespace, optional space after hyphen in -cameradir)
+      const pattern = /-camera\s+([-\d.eE+]+)\s+([-\d.eE+]+)\s+([-\d.eE+]+)\s+-\s*cameradir\s+([-\d.eE+]+)\s+([-\d.eE+]+)\s+([-\d.eE+]+)/;
+      const m = s.match(pattern);
+      if (!m) {
+        throw new Error('Cannot parse string. Expected: -camera X Y Z -cameradir DX DY DZ');
+      }
+      const nums = m.slice(1).map(Number);
+      if (nums.some(isNaN)) {
+        throw new Error('One or more values are not valid numbers.');
+      }
+      return { x: nums[0], y: nums[1], z: nums[2], dx: nums[3], dy: nums[4], dz: nums[5] };
+    }
+
+    function fmt(n) {
+      return n.toFixed(6);
+    }
+
+    function buildCamString(x, y, z, dx, dy, dz) {
+      return `-camera ${fmt(x)} ${fmt(y)} ${fmt(z)} -cameradir ${fmt(dx)} ${fmt(dy)} ${fmt(dz)}`;
+    }
+
+    function buildLua(camStr, name, fov) {
+      const escapedName = name
+        .replace(/\\/g, '\\\\')
+        .replace(/"/g, '\\"')
+        .replace(/\n/g, '\\n')
+        .replace(/\r/g, '\\r')
+        .replace(/\t/g, '\\t')
+        .replace(/\0/g, '\\0');
+      const fovVal = parseInt(fov, 10);
+      return `["edge_pos"] = "${camStr}",\n["name"] = "${escapedName}",\n["fov"] = ${isNaN(fovVal) ? DEFAULT_FOV : fovVal},`;
+    }
+
+    function showError(msg) {
+      errorMsg.textContent = msg;
+      errorMsg.classList.add('visible');
+      outputCard.style.display = 'none';
+    }
+
+    function clearError() {
+      errorMsg.textContent = '';
+      errorMsg.classList.remove('visible');
+    }
+
+    function calculate() {
+      clearError();
+
+      const centerRaw = centerInput.value.trim();
+      const cameraRaw = cameraInput.value.trim();
+
+      if (!centerRaw && !cameraRaw) return; // nothing to do yet
+
+      let center, cam;
+      try {
+        center = parseEdgePos(centerRaw);
+      } catch (e) {
+        showError('Center Reference: ' + e.message);
+        return;
+      }
+      try {
+        cam = parseEdgePos(cameraRaw);
+      } catch (e) {
+        showError('Camera Position: ' + e.message);
+        return;
+      }
+
+      // Calculate offset position; direction passes through directly
+      const bx  = cam.x  - center.x;
+      const by  = cam.y  - center.y;
+      const bz  = cam.z  - center.z;
+      const bdx = cam.dx;
+      const bdy = cam.dy;
+      const bdz = cam.dz;
+
+      const camStr = buildCamString(bx, by, bz, bdx, bdy, bdz);
+      const luaStr = buildLua(camStr, nameInput.value, fovInput.value);
+
+      camOutput.textContent = camStr;
+      luaOutput.textContent = luaStr;
+      outputCard.style.display = 'block';
+    }
+
+    // Auto-calculate on any input change
+    [centerInput, cameraInput, nameInput, fovInput].forEach(el => {
+      el.addEventListener('input', calculate);
+    });
+
+    calcBtn.addEventListener('click', calculate);
+
+    function makeCopyHandler(btn, getTextFn) {
+      btn.addEventListener('click', () => {
+        const text = getTextFn();
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 1500);
+        }).catch(() => {
+          // Fallback for older browsers: document.execCommand('copy') is deprecated
+          // but retained here as a last-resort for non-HTTPS / older environments.
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    }
+
+    makeCopyHandler(copyCamBtn, () => camOutput.textContent);
+    makeCopyHandler(copyLuaBtn, () => luaOutput.textContent);
+  </script>
+</body>
+</html>
