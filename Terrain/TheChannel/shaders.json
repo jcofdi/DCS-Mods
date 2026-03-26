@@ -1,0 +1,6618 @@
+{
+ "shaders": [
+  {
+   "path": "metashaders/terrain/system/instancemanager2.clear.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.fillcomputeindirect.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.addsubobjects.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.calccounters.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.calcoffsets.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.sort.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.fillindirect.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.calcvertindecies.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/grass/grass2.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "path": "../lockonshaders/missioneditor/gui.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ]
+  }
+ ],
+ "metashaders": [
+  {
+   "path": "metashaders/grass/grasslightpostprocess2.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.0/surface5.0.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/heatspot5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "BLENDFACTOR_SCALE_XYZ",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/lake5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_OFFSET",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/runwayonlay5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/runwayonlay5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/sea5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "ASSET_INDEX",
+     "value": ""
+    },
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_ROOF_TEXTURE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "ENABLE_ONLAY",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_ROOF_TEXTURE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "ENABLE_ONLAY",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_WATER",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "1"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_ROOF_TEXTURE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "2"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_ROOF_TEXTURE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "2"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "3"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_ROOF_TEXTURE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "USE_WATER",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_ROOF_TEXTURE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_ROOF_TEXTURE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_WATER",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "USE_WATER",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmapunique5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "ENABLE_ONLAY",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "UNIQUE_MASK_MAPPING",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmapunique5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "ENABLE_ONLAY",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmapunique5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "ENABLE_ONLAY",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmapunique5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "UNIQUE_MASK_MAPPING",
+     "value": ""
+    },
+    {
+     "name": "UNIQUE_NORMALMAP_MAPPING",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmapunique5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "UNIQUE_MASK_MAPPING",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmapunique5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/surfacevaryhouse5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/surfacevaryhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/surfacevaryhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_NORMALMAP",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/5.1/waveheightonlay5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/breakingwaves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/compute/birdinstancer.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "STANDARTSTRUCTURE",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ],
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/compute/hwinstancer5.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ],
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/compute/instancerrenderable.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/compute/surfacedetail5.0.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ],
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/edm_omni_light.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/edm_omni_light.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/edm_spot_light.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/edm_spot_light.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/effects/staticshadows.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP=PhotoshopOverlay",
+     "value": ""
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ],
+   "precompiledParams": [
+    {
+     "name": "SAMPLES",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "4",
+      "8",
+      "16"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/lightpolygon.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "BLENDFACTOR_SCALE_XYZ",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_LIGHTPALLETE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/lightpolygon.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "BLENDFACTOR_SCALE_XYZ",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_LIGHTPALLETE",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/lightpolygon.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/lightpolygon.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/rasterchart.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.parsechilds.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "LOD_COUNT",
+     "value": "8"
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/tests/blendanimation.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "BLENDISSEED",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/tests/blendanimation.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "BLENDISSEED",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/tests/blendanimation.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    },
+    {
+     "name": "WINDENABLE",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/tests/blendanimation.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    },
+    {
+     "name": "WINDENABLE",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/varyhouselod.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_NORMALMAP",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/varyhouselod.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_NORMALMAP",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/wire.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    },
+    {
+     "name": "WIRE",
+     "value": ""
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/wire.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "BALANCE_SURFACE_NOISE_DISABLE",
+     "value": ""
+    },
+    {
+     "name": "COLORCLIPMAP_ALPHA_IS_AO",
+     "value": ""
+    },
+    {
+     "name": "COLOR_CLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GENERATE_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "HACK_ASSETS_NORMALS",
+     "value": ""
+    },
+    {
+     "name": "LAKE_COLORCLIPMAP",
+     "value": ""
+    },
+    {
+     "name": "NOISE_OP",
+     "value": "PhotoshopOverlay"
+    },
+    {
+     "name": "PBR_TEXTURES",
+     "value": ""
+    },
+    {
+     "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+     "value": ""
+    },
+    {
+     "name": "SURFACE5",
+     "value": ""
+    },
+    {
+     "name": "USE_TERRAIN_PALETTE",
+     "value": ""
+    },
+    {
+     "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+     "value": ""
+    },
+    {
+     "name": "WIRE",
+     "value": ""
+    }
+   ]
+  }
+ ]
+}

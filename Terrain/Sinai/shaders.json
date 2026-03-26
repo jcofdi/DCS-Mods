@@ -1,0 +1,2380 @@
+{
+ "version": "2",
+ "defines": [
+  {
+   "name": "PBR_TEXTURES",
+   "value": ""
+  },
+  {
+   "name": "SURFACE5",
+   "value": ""
+  },
+  {
+   "name": "NOISE_OP",
+   "value": "PhotoshopOverlay"
+  },
+  {
+   "name": "SPLATMAP5_TEXTURE_BASECOLOR",
+   "value": ""
+  },
+  {
+   "name": "SPEEDTREE7_TEXTURE_BASECOLOR",
+   "value": ""
+  },
+  {
+   "name": "HACK_ASSETS_NORMALS",
+   "value": ""
+  },
+  {
+   "name": "LAKE_COLORCLIPMAP",
+   "value": ""
+  },
+  {
+   "name": "COLORCLIPMAP_ALPHA_IS_AO",
+   "value": ""
+  },
+  {
+   "name": "BALANCE_SURFACE_NOISE_DISABLE",
+   "value": ""
+  },
+  {
+   "name": "VARYHOUSELOD_SELFILLUM_FLIR",
+   "value": ""
+  },
+  {
+   "name": "COLOR_CLIPMAP",
+   "value": ""
+  },
+  {
+   "name": "CLIPMAP_NORMAL_MAP",
+   "value": ""
+  },
+  {
+   "name": "SPLATMAP",
+   "value": ""
+  }
+ ],
+ "shaders": [
+  {
+   "path": "metashaders/terrain/system/instancemanager2.clear.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.fillcomputeindirect.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.addsubobjects.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.calccounters.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.calcoffsets.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.sort.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.fillindirect.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.calcvertindecies.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/system/prevmatrices.upload.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/grass/grass2.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "ENABLE_MOTION_VECTORS",
+     "value": "1"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/grass/grass2.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "ENABLE_MOTION_VECTORS",
+     "value": "0"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "missioneditor/gui.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/airflow/airflowcomputetiles.fx",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": false
+  }
+ ],
+ "metashaders": [
+  {
+   "path": "metashaders/grass/grasslightpostprocess2.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/5.0/surface5.0.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/breakingwaves5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/heatspot5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BLENDFACTOR_SCALE_XYZ",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/lake5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_OFFSET",
+     "value": ""
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/omnilight5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/onlaymarks5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/radarpointsonlay5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/runway5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "APPLY_AUTOMAPPED_OPACITY",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/runway5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/runway5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/runwayonlay5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/sea5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/simple5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "ASSET_INDEX",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "USE_3D_AO",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/speedtree5.1.shadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "NO_BC3N",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "1"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "2"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "3"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "4"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    },
+    {
+     "name": "USE_WATER",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "USE_WATER",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    },
+    {
+     "name": "USE_FAKE_TANGENTS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/splatmap5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NOISES_COUNT",
+     "value": "5"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/spotlight5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/surfacevaryhouse5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/surfacevaryhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BLENDFACTOR_SCALE_XYZ",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/surfacevaryhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/surfacevaryhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_NORMALMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.decomposed.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flatshadows.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.flir.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.heightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.shadowmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouse5.1/varyhouse5.1.waves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "DOUBLESIDED",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_COLOR",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/varyhouselod5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_HEATMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.1/waveheightonlay5.1.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "ASSET_INDEX",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.lightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "ASSET_INDEX",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.lightmap.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.radar.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "ASSET_INDEX",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.radar.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.water.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "ASSET_INDEX",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/5.2/hardsplat5.2/hardsplatarray5.2.water.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_UVW_MANIFOLD",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/breakingwaves.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/compute/birdinstancer.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "STANDARTSTRUCTURE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true,
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/compute/computemanager.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "INSTANCER50",
+     "value": ""
+    },
+    {
+     "name": "LOD_COUNT",
+     "value": "14"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/compute/computemanager.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "INSTANCER52",
+     "value": ""
+    },
+    {
+     "name": "LOD_COUNT",
+     "value": "14"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/compute/hwinstancer5.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true,
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/compute/instancerrenderable.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": false,
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/compute/surfacedetail5.0.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    }
+   ],
+   "applyDefines": true,
+   "precompiledParams": [
+    {
+     "name": "LOD_COUNT",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/edm_spot_light.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/effects/staticshadows.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true,
+   "precompiledParams": [
+    {
+     "name": "SAMPLES",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "4",
+      "8",
+      "16"
+     ]
+    }
+   ]
+  },
+  {
+   "path": "metashaders/terrain/lightpolygon.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/map.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "VIEW_IN_MAPTEX",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/rasterchart.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_simple.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/surhouse.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BLENDFACTOR_SCALE_XYZ",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_PALETTE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/surhouse.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BLENDFACTOR_SCALE_Y",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/surhouse.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BLENDFACTOR_SCALE_XYZ",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/surhouse.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "NODEFINITIONS",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/system/instancemanager2.parsechilds.fx",
+   "transformModifier": "",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "GROUPSIZE",
+     "value": "128"
+    },
+    {
+     "name": "LOD_COUNT",
+     "value": "8"
+    }
+   ],
+   "applyDefines": false
+  },
+  {
+   "path": "metashaders/terrain/tests/blendanimation.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "BLENDISSEED",
+     "value": ""
+    },
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/tests/blendanimation.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "WINDENABLE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/varyhouselod.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_vertinstanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "USE_NORMALMAP",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  },
+  {
+   "path": "metashaders/terrain/wire.fx",
+   "transformModifier": "metashaders/transformmodifiers/transform_instanser.meta.hlsl",
+   "defines": [
+    {
+     "name": "DIRECTX11",
+     "value": "true"
+    },
+    {
+     "name": "WIRE",
+     "value": ""
+    }
+   ],
+   "applyDefines": true
+  }
+ ]
+}
